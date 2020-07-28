@@ -71,6 +71,15 @@
 1.	git checkout [-b] branch_name
 2.	git submodule foreach -q --recursive 'git checkout $(git config -f $toplevel/.gitmodules submodule.$name.branch)' 
 
+## Removing Submodules
+1. Delete submodule section in .gitmodules
+2. git add .gitmodules; git commit -m "removed submodule from .gitmodules"
+3. Delete submodule section in .git/config
+4. git rm --cached path_to_submodule
+5. rm -rf .git/modules/path_to_submodule
+6. git commit -m "removed submodule"
+7. rm -rf path_to_submodule
+
 ## Creating Custom Git Commands
 1.	Create a new file called git-{command-name}
 2.	Add #!/bin/bash as the first line of git-{command-name}
